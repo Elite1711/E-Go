@@ -2,16 +2,16 @@ import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { useEffect, useState } from "react";
 import {
-  ActivityIndicator,
-  Alert,
-  FlatList,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
+    ActivityIndicator,
+    Alert,
+    FlatList,
+    SafeAreaView,
+    StatusBar,
+    StyleSheet,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View,
 } from "react-native";
 import { Bus, fetchBusLinesFromAPI } from "./data/busData";
 
@@ -316,18 +316,24 @@ export default function LinesScreen() {
           <Ionicons name="home" size={24} color="#a8c8e8" />
           <Text style={styles.navText}>Accueil</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem}>
+        <TouchableOpacity
+          style={styles.navItem}
+          onPress={() => router.replace("/lines")}
+        >
           <Ionicons name="bus" size={24} color="#ff6b35" />
           <Text style={[styles.navText, styles.navTextActive]}>Bus</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.navItem}
-          onPress={() => router.push("/favorites")}
+          onPress={() => router.replace("/favorites")}
         >
           <Ionicons name="heart" size={24} color="#a8c8e8" />
           <Text style={styles.navText}>Favoris</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem}>
+        <TouchableOpacity
+          style={styles.navItem}
+          onPress={() => router.replace("/profile")}
+        >
           <Ionicons name="person" size={24} color="#a8c8e8" />
           <Text style={styles.navText}>Profil</Text>
         </TouchableOpacity>

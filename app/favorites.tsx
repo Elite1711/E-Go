@@ -65,7 +65,7 @@ export default function FavoritesScreen() {
           </Text>
           <TouchableOpacity
             style={styles.emptyButton}
-            onPress={() => router.push("/lines")}
+            onPress={() => router.replace("/lines")}
           >
             <Text style={styles.emptyButtonText}>Voir les bus</Text>
           </TouchableOpacity>
@@ -83,23 +83,29 @@ export default function FavoritesScreen() {
       <View style={styles.bottomNav}>
         <TouchableOpacity
           style={styles.navItem}
-          onPress={() => router.push("/")}
+          onPress={() => router.replace("/")}
         >
           <Ionicons name="home" size={24} color="#a8c8e8" />
           <Text style={styles.navText}>Accueil</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.navItem}
-          onPress={() => router.push("/lines")}
+          onPress={() => router.replace("/lines")}
         >
           <Ionicons name="bus" size={24} color="#a8c8e8" />
           <Text style={styles.navText}>Bus</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem}>
+        <TouchableOpacity
+          style={styles.navItem}
+          onPress={() => router.replace("/favorites")}
+        >
           <Ionicons name="heart" size={24} color="#ff6b35" />
           <Text style={[styles.navText, styles.navTextActive]}>Favoris</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem}>
+        <TouchableOpacity
+          style={styles.navItem}
+          onPress={() => router.replace("/profile")}
+        >
           <Ionicons name="person" size={24} color="#a8c8e8" />
           <Text style={styles.navText}>Profil</Text>
         </TouchableOpacity>

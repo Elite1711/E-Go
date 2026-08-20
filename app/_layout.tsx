@@ -44,6 +44,20 @@ export default function RootLayout() {
           headerShown: true,
         }}
       />
+      <Stack.Screen
+        name="favorites"
+        options={{
+          title: "Mes favoris",
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="profile"
+        options={{
+          title: "Profil",
+          headerShown: false,
+        }}
+      />
     </Stack>
   );
 }
